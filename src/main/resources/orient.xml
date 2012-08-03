@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<orient-server>
+    <network>
+        <protocols>
+            <protocol name="binary" implementation="com.orientechnologies.orient.server.network.protocol.binary.ONetworkProtocolBinary"/>
+        </protocols>
+        <listeners>
+		   <listener protocol="binary" port-range="2424-2430" ip-address="127.0.0.1" />
+        </listeners>
+    </network>
+    <storages>
+        <storage name="temp" path="memory:temp" userName="admin" userPassword="admin" loaded-at-startup="true"/>
+        <storage name="raceerror" path="local:data/raceerror" userName="admin" userPassword="admin" loaded-at-startup="true"/>
+    </storages>
+    <users>
+        <user name="root" password="root" resources="*"/>
+        <user name="guest" password="guest" resources="connect,server.listDatabases"/>
+        <user name="admin" password="admin" resources="*"/>
+    </users>
+    <properties>
+        <entry name="server.cache.file.static" value="false"/>
+        <entry name="log.console.level" value="info"/>
+        <entry name="log.file.level" value="fine"/>
+    </properties>
+</orient-server>
